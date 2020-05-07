@@ -12,8 +12,8 @@ footer {
 
 header {
     justify-content: space-between;
+    align-items: center;
     display: flex;
-    padding: 2em .5em 2em .5em;
 }
 
 h1 {
@@ -38,9 +38,14 @@ footer {
     margin-right: 8em;
 }
 
-.parent {
+.parent-center {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.parent-start {
+    display: flex;
+    align-items: flex-start;
 }
 
 .child {
@@ -50,6 +55,10 @@ footer {
 
 .center {
     text-align: center;
+}
+
+.padding-top {
+    padding-top: 2em;
 }
 
 .line-height {
@@ -75,10 +84,12 @@ ul {
 li {
     list-style-image: url(Media/sendblue.png);
     list-style-position: outside;
-    line-height: 2.5em;
-    font-size: 30px;
+    line-height: 1.5em;
+    font-size: 25px;
     font-weight: bold;
     cursor: pointer;
+    padding-top: 1.5em;
+    padding-bottom: .5em;
 }
 
 ul p {
@@ -90,4 +101,85 @@ ul p {
 
 .color-list {
     color: #0367A6;
+}
+
+
+.hotline {
+    font-size: 40px;
+    font-weight: bold;
+    color: #D12C2C;
+}
+
+.provid-logo img {
+    max-width: 100%;
+}
+
+.header-logos {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-logos img {
+    padding: .3em 2em .3em 2em;
+}
+
+/* Une classe pour adapter la taille du texte sur desktop */
+@media all and (min-width: 1024px) {
+    .desktop-width {
+        width: 75%;
+    }
+}
+
+/* Media queries pour les cellulaires  */
+@media all and (max-width: 800px) {
+    
+    .container {
+        margin: 3em;
+    }
+
+    .parent-center {
+       flex-wrap: wrap;
+   }
+
+   .parent-start {
+    display: block;
+    padding-bottom: 2em;
+    }
+
+    .child {
+        width: 100%;
+    }
+
+    .desktop-width {
+        width: 100%;
+    }
+
+    /* adaptation de la taille des polices */
+    h1 {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button,
+    .hotline {
+        font-size: 25px;
+    }
+
+    li {
+        font-size: 18px;
+        line-height: 1.3em;
+        padding-top: 1em;
+    }
+
+    /* adaptation de la taille des images */
+    .header-logos img {
+        max-width: 70%;
+    }
 }

@@ -13,7 +13,7 @@ Vue.component('question', {
     template: `<div><li 
     v-bind:class="{ 'color-list' : selected }"
     v-on:click="functionSelected">{{ text }}</li>
-        <p v-if="selected"><slot></slot></p></div>`
+        <p class="line-height desktop-width" v-if="selected"><slot></slot></p></div>`
  })
 
 const app = new Vue({
