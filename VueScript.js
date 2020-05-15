@@ -19,3 +19,13 @@ Vue.component('question', {
 const app = new Vue({
     el: '#FAQ',
 })
+
+const app2 = new Vue ({
+    el: '#Infos',
+    data: {
+        currentSection: 'Home',
+        level1: 'Home',
+        level2: false,
+        level3: false,
+    },
+})

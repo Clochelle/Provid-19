@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ma page de test abonnés</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <script src="vue.js" defer></script>
+        <script src="VueScript.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container space-between">
+                <div class="provid-logo">
+                    <img src="Media/LogoProvid19.png" alt="Provid-19">
+                </div>
+                <div class="header-logos">
+                    <img src="Media/LogoUdeS.png" alt="Université de Sherbrooke">
+                    <img src="Media/LogoCRC.png" alt="CRCHUS">
+                </div>
+            </div>
+        </header>
+
+        <div id="Infos">
+
+            <!-- Bandeau de déconnexion -->
+            <div class="bandeau">
+                <div class="container">
+                    <a v-if="level1" v-on:click="currentSection = 'Home', level2 = level3 = false"> {{ level1 }} </a>
+                    <a v-if="level2" v-on:click="currentSection = level2, level3 = false"> {{ level2 }} </a>
+                    <a v-if="level3"> {{ level3 }} </a>
+                    <a href="#">Déconnexion</a>
+                </div>
+            </div>
+
+            <!-- Page d'accueil I-->
+            <div class="container" v-if="currentSection === 'Home'">
+                <h2>En savoir plus sur le projet Provid-19 en vidéo</h2>
+                <div class="center">
+                    <video width="500" controls poster="Media/poster.png">
+                        <source src="Media/QuiNousSommes.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <h2>Formation des bénévoles et des employés</h2>
+                <p>S'il vous plaît, veuillez choisir une des catégories suivantes</p>
+
+                <a v-on:click="currentSection = level2 = 'Benevoles'">Bénévoles</a>
+                <a v-on:click="currentSection = level2 = 'Dogos'">Good boyz</a>
+            </div>
+
+            <!-- Page des bénévoles II -->
+            <div class="container" v-if="currentSection === 'Benevoles'">
+                <h2>Vous trouverez ici la formation des bénévoles</h2>
+                <img src="Media/MiniatureVid2.png" alt="">
+                <br><br>
+                <a v-on:click="currentSection = level3 = 'Xyz'">Accéder à la sous-section</a>               
+                <a v-on:click="currentSection = level1 = 'Home', level2 = level3 = false">Retour</a>
+            </div>
+
+            <!-- Page des documents xyz pour les bénévoles III -->
+            <div class="container" v-if="currentSection === 'Xyz'">
+                <h2>ceci est une sous-page de la section Bénévoles</h2>
+                <img src="Media/MiniatureVid.png" alt="">
+
+                <a v-on:click="currentSection = level2, level3 = false">Retour</a>
+            </div>
+            
+            <!-- Page des good dogos II -->
+            <div class="container" v-if="currentSection === 'Dogos'">
+                <h2>Vous trouverez ici les good dogos</h2>
+                <img src="Media/stock.jpg" alt="">
+                <br><br>
+                <a v-on:click="currentSection = level3 = 'DogosXyz'">Accéder à la sous-section</a>               
+                <a v-on:click="currentSection = level1, level2 = level3 = false">Retour</a>
+            </div>
+
+            <!-- Page des documents xyz pour les good dogos III -->
+            <div class="container" v-if="currentSection === 'DogosXyz'">
+                <h2>ceci est une sous-page de la section good Boyz</h2>
+                <img src="Media/stock2.jpg" alt="">
+
+                <a v-on:click="currentSection = level2, level3 = false">Retour</a>
+            </div>
+
+
+        </div>
+
+    <footer>
+        <div class="center">
+            <a href="#">Espace pro</a> <a href="#">Confidentialité</a>
+        </div>
+        <div class="provid-logo center">
+            <img src="Media/LogoProvid19.png" alt="Provid-19">
+            <p class="soft-grey">Copyright Provid-19 2020</p>
+        </div>
+    </footer>
+</body>
+</html>
