@@ -1,3 +1,14 @@
+/* Theme Name: Provid-19 Theme
+Theme URI: http://provid-19.ca
+Author: Clochelle Charlecourt
+Author URI: http://agenceclo.com/
+Description: A theme designed for the Provid-19 project. All rights reserved.
+Version: 1.0
+License:
+License URI:
+Tags:
+Text Domain: Provid-19 */
+
 body {
     margin: 0;
     background-color: #F3F3F3;
@@ -71,6 +82,10 @@ footer {
     line-height: 1.6em;
 }
 
+.line-height-more {
+    line-height: 2.5em;
+}
+
 .soft-grey {
     color: #F3F3F3;
 }
@@ -83,17 +98,17 @@ button {
     background-color: #D12C2C;
     border: none;
     border-radius: 80px;
-    padding: .8em 1.3em .8em 1.3em;
+    padding: .5em 1em .5em 1em;
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
 
-ul {
+.liste-questions ul {
     margin-left: 2em;
     margin-top: 3em;
 }
 
-li {
+.liste-questions {
     list-style-image: url(Media/sendblue.png);
     list-style-position: outside;
     line-height: 1.5em;
@@ -104,7 +119,7 @@ li {
     padding-bottom: .5em;
 }
 
-ul p {
+.liste-questions ul p {
     margin-left: 2em;
     margin-top: .5em;
     margin-bottom: 1.5em;
@@ -140,7 +155,7 @@ ul p {
 }
 
 .bandeau {
-    background-color: #D12C2C;
+    background-color: #5f9bc0;
     padding: .5em;
 }
 
@@ -148,7 +163,22 @@ ul p {
     margin-top: 0;
 }
 
-/* Une classe pour adapter la taille du texte sur desktop */
+.bandeau a {
+    color: #343434;
+}
+
+.liens-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.liens-flex a {
+    padding: .5em;
+    color: #343434;
+}
+
+/* Une classe pour adapter la largeur du texte sur desktop */
 @media all and (min-width: 1024px) {
     .desktop-width {
         width: 75%;
@@ -197,7 +227,7 @@ ul p {
         font-size: 25px;
     }
 
-    li {
+    .liste-questions {
         font-size: 18px;
         line-height: 1.3em;
         padding-top: 1em;
